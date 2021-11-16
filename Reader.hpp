@@ -9,6 +9,7 @@
 #ifndef Reader_hpp
 #define Reader_hpp
 
+#include<fstream>
 #include <string>
 #include "InfInt.h"
 #include <stdio.h>
@@ -19,6 +20,9 @@ class Reader
 {
 public:
     Reader(string way);
+    void ReadParams(string way);
+    void ReadMatr(string way);
+    void RegMatr();
     bool **mas;
     u_long numOfVar;
     u_long numOfPol;

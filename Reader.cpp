@@ -14,28 +14,38 @@
 
 using namespace std;
 
-Reader::Reader(string way)
-{
+void Reader::ReadParams(string way){
     ifstream in(way);
-    if(!in)
-        throw std::invalid_argument("No such File");
-    
     in >> this->numOfVar >> this->numOfPol;
+}
+
+void Reader::ReadMatr(string way){
+    ifstream in(way);
     u_long combinations = this->numOfVar * this->numOfVar / 2 + this->numOfVar + 1;
     
-    this->mas = new bool *[this->numOfPol];
     for (int i = 0; i < this->numOfPol; ++i)
-        this->mas[i] = new bool [combinations];
-    
-    for (int i = 0; i < this->numOfPol; ++i)
-    {
-        string a;
-        for(int j=0;j < combinations; ++j)
         {
-            in >> this-> mas[i][j] ;
+            string a;
+            for(int j=0;j < combinations; ++j)
+            {
+                in >> this-> mas[i][j] ;
+            }
+            in >> a;
         }
-        in >> a;
-    }
-    
-        
+   
+}
+
+void Reader::RegMatr(){
+    u_long combinations = this->numOfVar * this->numOfVar / 2 + this->numOfVar + 1;
+    this->mas = new bool *[this->numOfPol];
+          for (int i = 0; i < this->numOfPol; ++i)
+              this->mas[i] = new bool [combinations];
+}
+
+Reader::Reader(string way)
+{
+    ReadParams(way);
+    RegMatr();
+    ReadMatr(way);
+
 }

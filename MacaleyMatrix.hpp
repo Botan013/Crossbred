@@ -17,13 +17,14 @@ class MacaleyMatrix
 {
 public:
     MacaleyMatrix(u_long _numOfVar, u_long _numOfEquat, bool** matrix);
-    MacaleyMatrix(Reader reader);
-    u_long Sum();
+    MacaleyMatrix(Reader *reader);
     
-private:
+    void PrintMatr();
+    u_long Sum();
     u_long numOfPol;
     u_long combinations;
     u_long numOfVar;
+    bool **macMatr;
 };
 
 #endif /* MacaleyMatrix_hpp */
