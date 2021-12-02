@@ -3,28 +3,28 @@
 //  Cursach
 //
 //  Created by Danil Zalomov on 11/13/21.
-//  Copyright Â© 2021 Danil Zalomov. All rights reserved.
+//  Copyright © 2021 Danil Zalomov. All rights reserved.
 //
 
 #ifndef MacaleyMatrix_hpp
 #define MacaleyMatrix_hpp
 
-#include "InfInt.h"
 #include <stdio.h>
 #include "Reader.hpp"
-
+#include "InfInt.h"
 class MacaleyMatrix
 {
 public:
-    MacaleyMatrix(u_long _numOfVar, u_long _numOfEquat, bool** matrix);
-    MacaleyMatrix(Reader *reader);
-    
-    void PrintMatr();
-    u_long Sum();
-    u_long numOfPol;
-    u_long combinations;
-    u_long numOfVar;
-    bool **macMatr;
+	MacaleyMatrix(long _numOfVar, long _numOfEquat, bool** matrix);
+	MacaleyMatrix(Reader* reader);
+	MacaleyMatrix(string way);
+	void PrintMatr();
+	long Sum();
+	void AddSomeRows();
+	long numOfPol;
+	long combinations;
+	long numOfVar;
+	bool** macMatr;
 };
 
 #endif /* MacaleyMatrix_hpp */
