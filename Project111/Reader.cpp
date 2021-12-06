@@ -40,10 +40,10 @@ void Reader::ReadMatr(string way) {
 }
 
 void Reader::RegMatr() {
-	long combinations = this->numOfVar * (this->numOfVar - 1) / 2 + this->numOfVar + 1;
+	Combinations* combinations = new Combinations(numOfVar);
 	this->mas = new bool* [this->numOfPol];
 	for (int i = 0; i < this->numOfPol; ++i)
-		this->mas[i] = new bool[combinations];
+		this->mas[i] = new bool[combinations->GetX()];
 }
 
 Reader::Reader(string way)

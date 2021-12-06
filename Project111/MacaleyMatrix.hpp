@@ -19,6 +19,7 @@ public:
 	MacaleyMatrix(Reader* reader);
 	MacaleyMatrix(string way);
 	void PrintMatr();
+	void RegMatr(bool *mas);
 	long Sum();
 	void AddSomeRows();
 	long numOfPol;

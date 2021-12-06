@@ -39,7 +39,23 @@ MacaleyMatrix::MacaleyMatrix(string way)
 
 }
 
+//void MacaleyMatrix::RegMatr(bool* mas, long numOfPol, long numOfVar) {
+
+
+//}
+
 void MacaleyMatrix::AddSomeRows() {
+	Combinations* combinations = new Combinations();
+	long newSize = combinations->GetCurrentSize() + 1;
+
+	bool** mas = new bool* [(this->numOfPol+1)*this->numOfVar];
+	for (long i = 0; i < (this->numOfPol + 1) * this->numOfVar; ++i)
+		mas[i] = new bool[combinations->CalculateCombinations(newSize, this->numOfVar)];
+
+	long* matrHelp = new long[combinations->CalculateCombinations(newSize, this->numOfVar)];
+	combinations->FillMatrix(matrHelp, this->numOfVar);
+	
+
 
 }
 
