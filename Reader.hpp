@@ -3,7 +3,7 @@
 //  Cursach
 //
 //  Created by Danil Zalomov on 11/15/21.
-//  Copyright © 2021 Danil Zalomov. All rights reserved.
+//  Copyright ï¿½ 2021 Danil Zalomov. All rights reserved.
 //
 
 #ifndef Reader_hpp
@@ -25,6 +25,7 @@ public:
 	bool** mas;
 	long numOfVar;
 	long numOfPol;
+    long size;
 };
 
 #endif /* Reader_hpp */

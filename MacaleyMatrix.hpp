@@ -3,7 +3,7 @@
 //  Cursach
 //
 //  Created by Danil Zalomov on 11/13/21.
-//  Copyright © 2021 Danil Zalomov. All rights reserved.
+//  Copyright ï¿½ 2021 Danil Zalomov. All rights reserved.
 //
 
 #ifndef MacaleyMatrix_hpp
@@ -19,10 +19,13 @@ public:
 	MacaleyMatrix(Reader* reader);
 	MacaleyMatrix(string way);
 	void PrintMatr();
+    void Diagonalaise();
+	//void RegMatr(bool *mas);
+    void NewMatr(long newNumOfPol);
 	long Sum();
 	void AddSomeRows();
 	long numOfPol;
-	long combinations;
+	long size;
 	long numOfVar;
 	bool** macMatr;
 };

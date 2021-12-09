@@ -3,7 +3,7 @@
 //  Cursach
 //
 //  Created by Danil Zalomov on 11/15/21.
-//  Copyright © 2021 Danil Zalomov. All rights reserved.
+//  Copyright ï¿½ 2021 Danil Zalomov. All rights reserved.
 //
 #include "Reader.hpp"
 #include "InfInt.h"
@@ -17,7 +17,7 @@ using namespace std;
 
 void Reader::ReadParams(string way) {
 	ifstream in(way);
-	in >> this->numOfPol >> this->numOfVar;
+	in >> this->numOfPol >> this->numOfVar >> this->size;
 	in.close();
 }
 
@@ -25,7 +25,7 @@ void Reader::ReadMatr(string way) {
 	ifstream in(way);
 	Combinations* combinations = new Combinations(this->numOfVar);
 	//long combinations = this->numOfVar * (this->numOfVar - 1) / 2 + this->numOfVar + 1;
-	in >> this->numOfPol >> this->numOfVar;
+	in >> this->numOfPol >> this->numOfVar >> this->size;
 	for (int i = 0; i < this->numOfPol; ++i)
 	{
 		string a;
@@ -40,10 +40,10 @@ void Reader::ReadMatr(string way) {
 }
 
 void Reader::RegMatr() {
-	long combinations = this->numOfVar * (this->numOfVar - 1) / 2 + this->numOfVar + 1;
+	Combinations* combinations = new Combinations(numOfVar);
 	this->mas = new bool* [this->numOfPol];
 	for (int i = 0; i < this->numOfPol; ++i)
-		this->mas[i] = new bool[combinations];
+		this->mas[i] = new bool[combinations->GetX()];
 }
 
 Reader::Reader(string way)
